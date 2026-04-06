@@ -1,0 +1,42 @@
+# Secrets
+.env
+
+# Python caches
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+.pytest_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Telegram sessions
+*.session
+data/*.session
+
+# Runtime data
+data/*.json
+data/*.db
+data/*.sqlite
+data/*.md
+!data/.gitkeep
+!data/README.md
+!data/owner_knowledge.example.md
+!data/gazetteer.json
+
+# Logs and temporary files
+logs/
+*.log
+*.tmp
+*.bak
+test_output.txt
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,133 @@
+"""Protocol-интерфейсы для сервисов.
+
+Используются для type checking и уменьшения связанности.
+"""
+
+from __future__ import annotations
+
+from typing import Any, Protocol, runtime_checkable
+
+
+@runtime_checkable
+class StateStoreProtocol(Protocol):
+    """Интерфейс хранилища состояния."""
+
+    async def load(self) -> Any: ...
+    async def get_snapshot(self) -> Any: ...
+    async def set_active_model(self, model: str) -> Any: ...
+    async def update_limits(self, limits: Any) -> Any: ...
+
+
+@runtime_checkable
+class EntityMemoryProtocol(Protocol):
+    """Интерфейс хранилища сущностей."""
+
+    async def load(self) -> None: ...
+    async def observe_user(
+        self,
+        user_id: int | None = None,
+        username: str | None = None,
+        display_name: str | None = None,
+        first_name: str | None = None,
+        last_name: str | None = None,
+    ) -> None: ...
+    async def get_entity(self, user_id: str) -> Any | None: ...
+
+
+@runtime_checkable
+class UserMemoryProtocol(Protocol):
+    """Интерфейс пользовательской памяти."""
+
+    async def load(self) -> None: ...
+    async def get_profile(self, user_id: str) -> Any | None: ...
+    async def update_profile(self, user_id: str, data: dict) -> None: ...
+
+
+@runtime_checkable
+class SharedMemoryProtocol(Protocol):
+    """Интерфейс общей памяти."""
+
+    async def load(self) -> None: ...
+    async def add(self, text: str, chat_id: int, **kwargs: Any) -> None: ...
+    async def search(self, query: str, limit: int = 5) -> list[Any]: ...
+
+
+@runtime_checkable
+class OwnerDirectivesProtocol(Protocol):
+    """Интерфейс директив владельца."""
+
+    async def load(self) -> None: ...
+    async def get_rules(self, user_id: str) -> Any | None: ...
+    async def add_rule(self, user_id: str, rule: dict) -> None: ...
+
+
+@runtime_checkable
+class ChatConfigProtocol(Protocol):
+    """Интерфейс конфигурации чатов."""
+
+    async def load(self) -> None: ...
+    async def get_config(self, chat_id: str) -> Any | None: ...
+    async def set_config(self, chat_id: str, config: dict) -> None: ...
+
+
+@runtime_checkable
+class ChatTopicProtocol(Protocol):
+    """Интерфейс топиков чатов."""
+
+    async def load(self) -> None: ...
+    async def get_topics(self, chat_id: str) -> list[Any]: ...
+    async def add_topic(self, chat_id: str, topic: Any) -> None: ...
+
+
+@runtime_checkable
+class StyleProfileProtocol(Protocol):
+    """Интерфейс стилевых профилей."""
+
+    async def load(self) -> None: ...
+    async def get_owner_profile(self) -> Any: ...
+    async def get_user_profile(self, user_id: str) -> Any | None: ...
+
+
+@runtime_checkable
+class OwnerKnowledgeProtocol(Protocol):
+    """Интерфейс знаний владельца."""
+
+    async def load(self) -> None: ...
+    async def get_knowledge(self, key: str) -> Any | None: ...
+    async def add_knowledge(self, key: str, value: Any) -> None: ...
+
+
+@runtime_checkable
+class SchedulerProtocol(Protocol):
+    """Интерфейс планировщика."""
+
+    async def load(self) -> None: ...
+    async def schedule(self, task: Any, at: str) -> None: ...
+    async def cancel(self, task_id: str) -> None: ...
+
+
+@runtime_checkable
+class MonitorProtocol(Protocol):
+    """Интерфейс мониторинга."""
+
+    async def load(self) -> None: ...
+    async def record(self, metric: str, value: float, **labels: Any) -> None: ...
+    async def get_metrics(self, metric: str) -> list[Any]: ...
+
+
+@runtime_checkable
+class LiveCacheProtocol(Protocol):
+    """Интерфейс live-кэша."""
+
+    async def load(self) -> None: ...
+    async def get(self, key: str) -> Any | None: ...
+    async def set(self, key: str, value: Any, ttl: int | None = None) -> None: ...
+
+
+@runtime_checkable
+class ModelStatsProtocol(Protocol):
+    """Интерфейс статистики моделей."""
+
+    async def load(self) -> None: ...
+    async def record(self, model: str, tokens: int, requests: int = 1) -> None: ...
+    async def get_stats(self, model: str) -> Any | None: ...

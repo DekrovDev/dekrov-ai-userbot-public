@@ -1,0 +1,338 @@
+{
+  "generated_at": "2026-03-15",
+  "source": {
+    "primary_index": "https://docs.pyrogram.org/api/methods/",
+    "key_pages": [
+      "https://docs.pyrogram.org/api/methods/send_message",
+      "https://docs.pyrogram.org/api/methods/edit_message_text",
+      "https://docs.pyrogram.org/api/methods/delete_messages",
+      "https://docs.pyrogram.org/api/methods/forward_messages",
+      "https://docs.pyrogram.org/api/methods/copy_message",
+      "https://docs.pyrogram.org/api/methods/join_chat",
+      "https://docs.pyrogram.org/api/methods/leave_chat",
+      "https://docs.pyrogram.org/api/methods/create_group",
+      "https://docs.pyrogram.org/api/methods/create_supergroup",
+      "https://docs.pyrogram.org/api/methods/set_chat_username",
+      "https://docs.pyrogram.org/api/methods/set_username"
+    ]
+  },
+  "notes": [
+    "This file is a machine-readable capability catalog for Pyrogram client methods.",
+    "It is intended to drive action-registry growth, parser coverage, and risk policy.",
+    "Not every method should be exposed to natural-language execution without confirmation.",
+    "Raw MTProto APIs exist beyond this file; this catalog focuses on documented high-level client methods."
+  ],
+  "categories": [
+    {
+      "name": "lifecycle",
+      "methods": [
+        "start",
+        "stop",
+        "run",
+        "restart",
+        "add_handler",
+        "remove_handler",
+        "stop_transmission",
+        "export_session_string",
+        "set_parse_mode",
+        "idle",
+        "compose"
+      ]
+    },
+    {
+      "name": "messages_send_copy_forward",
+      "methods": [
+        "send_message",
+        "forward_messages",
+        "copy_message",
+        "copy_media_group",
+        "send_photo",
+        "send_audio",
+        "send_document",
+        "send_sticker",
+        "send_video",
+        "send_animation",
+        "send_voice",
+        "send_video_note",
+        "send_media_group",
+        "send_location",
+        "send_venue",
+        "send_contact",
+        "send_cached_media",
+        "send_reaction",
+        "send_poll",
+        "vote_poll",
+        "stop_poll",
+        "retract_vote",
+        "send_dice",
+        "send_game",
+        "send_inline_bot_result"
+      ]
+    },
+    {
+      "name": "messages_edit_delete_read",
+      "methods": [
+        "edit_message_text",
+        "edit_message_caption",
+        "edit_message_media",
+        "edit_message_reply_markup",
+        "edit_inline_text",
+        "edit_inline_caption",
+        "edit_inline_media",
+        "edit_inline_reply_markup",
+        "send_chat_action",
+        "delete_messages",
+        "get_messages",
+        "get_media_group",
+        "get_chat_history",
+        "get_chat_history_count",
+        "read_chat_history",
+        "search_messages",
+        "search_messages_count",
+        "search_global",
+        "search_global_count",
+        "download_media",
+        "stream_media",
+        "get_discussion_message",
+        "get_discussion_replies",
+        "get_discussion_replies_count",
+        "get_custom_emoji_stickers"
+      ]
+    },
+    {
+      "name": "chat_membership_moderation",
+      "methods": [
+        "join_chat",
+        "leave_chat",
+        "ban_chat_member",
+        "unban_chat_member",
+        "restrict_chat_member",
+        "promote_chat_member",
+        "set_administrator_title",
+        "add_chat_members",
+        "delete_user_history",
+        "approve_chat_join_request",
+        "approve_all_chat_join_requests",
+        "decline_chat_join_request",
+        "decline_all_chat_join_requests"
+      ]
+    },
+    {
+      "name": "chat_metadata_and_state",
+      "methods": [
+        "set_chat_photo",
+        "delete_chat_photo",
+        "set_chat_title",
+        "set_chat_description",
+        "set_chat_permissions",
+        "pin_chat_message",
+        "unpin_chat_message",
+        "unpin_all_chat_messages",
+        "get_chat",
+        "get_chat_member",
+        "get_chat_members",
+        "get_chat_members_count",
+        "get_dialogs",
+        "get_dialogs_count",
+        "set_chat_username",
+        "get_nearby_chats",
+        "archive_chats",
+        "unarchive_chats",
+        "create_channel",
+        "create_group",
+        "create_supergroup",
+        "delete_channel",
+        "delete_supergroup",
+        "set_slow_mode",
+        "mark_chat_unread",
+        "get_chat_event_log",
+        "get_chat_online_count",
+        "get_send_as_chats",
+        "set_send_as_chat",
+        "set_chat_protected_content"
+      ]
+    },
+    {
+      "name": "users_profile_and_presence",
+      "methods": [
+        "get_me",
+        "get_users",
+        "get_chat_photos",
+        "get_chat_photos_count",
+        "set_profile_photo",
+        "delete_profile_photos",
+        "set_username",
+        "update_profile",
+        "block_user",
+        "unblock_user",
+        "get_common_chats",
+        "get_default_emoji_statuses",
+        "set_emoji_status"
+      ]
+    },
+    {
+      "name": "invite_links",
+      "methods": [
+        "get_chat_invite_link",
+        "export_chat_invite_link",
+        "create_chat_invite_link",
+        "edit_chat_invite_link",
+        "revoke_chat_invite_link",
+        "delete_chat_invite_link",
+        "get_chat_invite_link_joiners",
+        "get_chat_invite_link_joiners_count",
+        "get_chat_admin_invite_links",
+        "get_chat_admin_invite_links_count",
+        "get_chat_admins_with_invite_links",
+        "get_chat_join_requests",
+        "delete_chat_admin_invite_links"
+      ]
+    },
+    {
+      "name": "contacts",
+      "methods": [
+        "add_contact",
+        "delete_contacts",
+        "import_contacts",
+        "get_contacts",
+        "get_contacts_count"
+      ]
+    },
+    {
+      "name": "decorators",
+      "methods": [
+        "on_callback_query",
+        "on_chat_join_request",
+        "on_chat_member_updated",
+        "on_chosen_inline_result",
+        "on_deleted_messages",
+        "on_disconnect",
+        "on_edited_message",
+        "on_inline_query",
+        "on_message",
+        "on_poll",
+        "on_raw_update",
+        "on_user_status"
+      ]
+    },
+    {
+      "name": "account_security",
+      "methods": [
+        "enable_cloud_password",
+        "change_cloud_password",
+        "remove_cloud_password"
+      ]
+    },
+    {
+      "name": "inline_callbacks_bots_games",
+      "methods": [
+        "get_inline_bot_results",
+        "answer_callback_query",
+        "answer_inline_query",
+        "request_callback_answer",
+        "set_game_score",
+        "get_game_high_scores",
+        "set_bot_commands",
+        "get_bot_commands",
+        "delete_bot_commands",
+        "set_bot_default_privileges",
+        "get_bot_default_privileges",
+        "set_chat_menu_button",
+        "get_chat_menu_button",
+        "answer_web_app_query"
+      ]
+    },
+    {
+      "name": "auth_and_low_level_session",
+      "methods": [
+        "connect",
+        "disconnect",
+        "initialize",
+        "terminate",
+        "send_code",
+        "resend_code",
+        "sign_in",
+        "sign_in_bot",
+        "sign_up",
+        "get_password_hint",
+        "check_password",
+        "send_recovery_code",
+        "recover_password",
+        "accept_terms_of_service",
+        "log_out",
+        "invoke",
+        "resolve_peer",
+        "save_file"
+      ]
+    },
+    {
+      "name": "bound_methods",
+      "methods": [
+        "click",
+        "delete",
+        "download",
+        "forward",
+        "copy",
+        "pin",
+        "unpin",
+        "edit",
+        "edit_text",
+        "edit_caption",
+        "edit_media",
+        "edit_reply_markup",
+        "reply",
+        "reply_text",
+        "reply_animation",
+        "reply_audio",
+        "reply_cached_media",
+        "reply_chat_action",
+        "reply_contact",
+        "reply_document",
+        "reply_game",
+        "reply_inline_bot_result",
+        "reply_location",
+        "reply_media_group",
+        "reply_photo",
+        "reply_poll",
+        "reply_sticker",
+        "reply_venue",
+        "reply_video",
+        "reply_video_note",
+        "reply_voice",
+        "get_media_group",
+        "react",
+        "archive",
+        "unarchive",
+        "set_title",
+        "set_description",
+        "set_photo",
+        "ban_member",
+        "unban_member",
+        "restrict_member",
+        "promote_member",
+        "get_member",
+        "get_members",
+        "add_members",
+        "join",
+        "leave",
+        "mark_unread",
+        "set_protected_content",
+        "unpin_all_messages",
+        "block",
+        "unblock",
+        "answer",
+        "approve",
+        "decline"
+      ]
+    },
+    {
+      "name": "raw_api_note",
+      "methods": [
+        "raw.functions.messages.DeleteHistory",
+        "raw.functions.messages.DeleteChat",
+        "raw.functions.channels.DeleteHistory",
+        "raw.functions.messages.DeleteChatUser"
+      ]
+    }
+  ]
+}
